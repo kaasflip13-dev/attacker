@@ -1,1 +1,39 @@
-# attacker
+import random
+
+print("=== HET DICHTBEGROEIDE BOS ===")
+print("Je staat aan de rand van een donker, dichtbegroeid bos.")
+print("Mist hangt tussen de bomen en het geluid van vogels is verstomd.")
+
+stappen = 0
+gevonden = False
+
+while not gevonden:
+    print("\nWat doe je?")
+    print("1. Ga links")
+    print("2. Ga rechts")
+    print("3. Ga rechtdoor")
+
+    keuze = input("> ")
+
+    stappen += 1
+
+    gebeurtenissen = [
+        "Je duwt een gordijn van natte varens opzij.",
+        "Je hoort takken kraken ergens diep tussen de bomen.",
+        "Je stapt over een omgevallen boomstam bedekt met mos.",
+        "Je voelt een koude wind langs je gezicht strijken.",
+        "Je ziet vreemde pootafdrukken in de modder."
+    ]
+
+    print("\n" + random.choice(gebeurtenissen))
+
+    if random.randint(1, 5) == 5:
+        gevonden = True
+        print("\nPlotseling wordt het bos minder dicht.")
+        print("Voor je verschijnt een verborgen open plek.")
+        print("In het midden staat een oude stenen poort.")
+        print(f"Na {stappen} stappen heb je de open plek gevonden.")
+    else:
+        print("Je loopt verder door het dichte bos.")
+
+print("\nEINDE")
